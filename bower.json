@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "authors": [
+    "zjliu <liuzhijunsw@126.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "dependencies": {
+	 "angular":"*",
+	 "angular-route":"*",
+	 "bootstrap":"*",
+	 "seajs":"*"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/js/bower_components",
+    "test",
+    "tests"
+  ]
+}

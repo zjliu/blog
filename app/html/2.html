@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<pre>
+    JS作用域及作用域链
+    1）在Javascript中，作用域只和函数的界定符相关(无块级作用域)，函数与函数的嵌套形成了作用域链； 
+    2）作用域链的创建规则是复制上一层环境的作用域链，并将指向本环境变量对象的指针放到链首； 
+    3）在Javascript中，如果一个对象不再被引用，那么这个对象就会被GC回收。
+       如果两个对象互相引用，而不再被第3者所引用，那么这两个互相引用的对象也会被回收。
+    4）用with可以
+
+
+    1、JS在执行前会进行预编译（把作用域里的函数及变量申明提到最前面）
+    2、JS在查找引用的时候会优先从
+    3、JS中没有用var声明的变量都是全局变量，而且是顶层对象的属性。
+    4、作用域链with
+
+
+</pre>
+<script>
+    function A() {
+        var a = 1;
+        var b = 2;
+        this.a = a;
+        this.b = b;
+    }
+
+    with (new A()) {
+        console.log(a);
+        var a = 3;
+    }
+</script>
+<script>
+    var x = 1;
+    console.log(x);
+    var y = function () {
+        //console.log(window.x)
+        console.log(x);
+        var x = 2;
+        console.log(x);
+    }
+    y();
+    console.log(x);
+
+    person = { name: "yhb", age: 22, height: 175, wife: { name: "lwy", age: 21 } };
+    with (person.wife) {
+        console.log(name);
+    }
+</script>
